@@ -7,6 +7,8 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
+process.env.BABEL_ENV = 'development';
+
 module.exports = {
   entry: APP_PATH,
   reolve: {
@@ -31,8 +33,7 @@ module.exports = {
         include: APP_PATH,
         query: {
           // https://github.com/babel/babel-loader#options
-          cacheDirectory: true,
-          presets: ['es2015', 'react']
+          cacheDirectory: true
         }
       }
     ]
